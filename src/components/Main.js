@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SatSetting from './SatSetting';
 import SatelliteList from './SatelliteList';
+import WorldMap from './WorldMap';
 import {NEARBY_SATELLITE, SAT_API_KEY, STARLINK_CATEGORY} from "../constants";
 import axios from 'axios';
 
@@ -38,6 +39,11 @@ class Main extends Component {
 
 
     }
+    showMap = selected => {
+        console.log(selected)
+
+    };
+
 
 
     render() {
@@ -48,10 +54,10 @@ class Main extends Component {
                 <div className="left-side">
                     <SatSetting onShow={this.showNearbySatellite}/>
                     <SatelliteList satInfo={satInfo}  isLoad={this.state.isLoadingList}
-                    />
+                                   onShowMap={this.showMap}/>
                 </div>
                 <div className="right-side">
-                    right
+                   <WorldMap />
                 </div>
             </div>
         );
