@@ -1,0 +1,92 @@
+/*.sat-setting {*/
+/*    text-align: left;*/
+/*    padding: 10px;*/
+/*    border: 2px solid #ccc;*/
+/*}*/
+
+/*.setting-list {*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*.setting-label {*/
+/*    color: #777;*/
+/*    font-weight: bold;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.two-item-col {*/
+/*    display: flex;*/
+/*}*/
+
+/*.right-item {*/
+/*    margin-left: 16px;*/
+/*}*/
+
+/*.list-item label,*/
+/*.altitude-setting span {*/
+/*    font-size: 1em;*/
+/*}*/
+
+/*.duration-setting {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    margin-top: 8px;*/
+/*}*/
+
+/*.duration-slider {*/
+/*    flex: 1;*/
+/*    margin-left: 10px;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.ant-slider-handle{*/
+/*    border: solid 2px #1f6099;*/
+/*}*/
+
+/*.ant-slider-track{*/
+/*    background-color: #1f6099;*/
+/*}*/
+
+/*.ant-slider:hover .ant-slider-track{*/
+/*    background-color: #1f6099;*/
+/*}*/
+
+/*.show-nearby {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    margin-top: 3px;*/
+/*}*/
+
+/*.show-nearby-btn {*/
+/*    background-color: #2bb673;*/
+/*    color: #fff;*/
+/*    font-size: 1em;*/
+/*    text-transform: none;*/
+/*    padding: 10px 22px;*/
+/*}*/
+.sat-setting {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px 0 15px;
+    background: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+}
+
+.setting-list {
+    margin-bottom: 8px;
+}
+
+.show-nearby {
+    display: flex;
+    justify-content: center;
+    margin-top:2px;
+}
+
+.show-nearby .ant-form-item-control {
+    text-align: center;
+}
+
+.sat-setting .ant-form-item {
+    margin-bottom: 12px;
+}
