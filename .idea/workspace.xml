@@ -4,7 +4,7 @@
     <list default="true" id="0af10d15-f9d6-4463-9ebe-0d81e369edda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WorldMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WorldMap.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,10 +66,23 @@
       <workItem from="1608001250803" duration="7798000" />
       <workItem from="1608174173338" duration="3749000" />
       <workItem from="1608178616782" duration="4493000" />
+      <workItem from="1608664414162" duration="6244000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/WorldMap.js</url>
+          <line>39</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

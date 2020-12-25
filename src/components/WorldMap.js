@@ -49,7 +49,7 @@ class WorldMap1 extends Component {
             const {
                 latitude,
                 longitude,
-                elevation,
+                // elevation,
                 altitude,
                 duration
             } = this.props.observerData;
@@ -61,7 +61,7 @@ class WorldMap1 extends Component {
 
             const urls = this.props.satData.map(sat => {
                 const { satid } = sat;
-                const url = `/api/${SATELLITE_POSITION_URL}/${satid}/${latitude}/${longitude}/${elevation}/${endTime}/&apiKey=${SAT_API_KEY}`;
+                const url = `/api/${SATELLITE_POSITION_URL}/${satid}/${latitude}/${longitude}/${altitude}/${endTime}/&apiKey=${SAT_API_KEY}`;
 
                 return axios.get(url);
             });
@@ -74,11 +74,12 @@ class WorldMap1 extends Component {
                     })
                 )
                 .then(res => {
+                    console.log(res);
                     this.setState({
                         isLoading: false,
                         isDrawing: true
                     });
-
+                    // don't allow draw when drawing
                     if (!prevState.isDrawing) {
                         this.track(res);
                     } else {
@@ -94,13 +95,14 @@ class WorldMap1 extends Component {
     }
 
     track = data => {
+        console.log(data)
         if (!data[0].hasOwnProperty("positions")) {
             throw new Error("no position data");
-            return;
+            // return;
         }
 
         const len = data[0].positions.length;
-        const { duration } = this.props.observerData;
+        // const { duration } = this.props.observerData;
         const { context2 } = this.map;
 
         let now = new Date();
@@ -109,10 +111,11 @@ class WorldMap1 extends Component {
 
         let timer = setInterval(() => {
             let ct = new Date();
-
+            console.log(ct)
             let timePassed = i === 0 ? 0 : ct - now;
+            console.log(timePassed)
             let time = new Date(now.getTime() + 60 * timePassed);
-
+            console.log(time)
             context2.clearRect(0, 0, width, height);
 
             context2.font = "bold 14px sans-serif";
@@ -121,10 +124,12 @@ class WorldMap1 extends Component {
             context2.fillText(d3TimeFormat(time), width / 2, 10);
 
             if (i >= len) {
+                // clear the interval
                 clearInterval(timer);
                 this.setState({ isDrawing: false });
                 const oHint = document.getElementsByClassName("hint")[0];
                 oHint.innerHTML = "";
+                // context2.clearRect(0, 0, width, height);
                 return;
             }
 
@@ -150,6 +155,7 @@ class WorldMap1 extends Component {
 
         context2.fillStyle = this.color(nameWithNumber);
         context2.beginPath();
+        // satellite shape
         context2.arc(xy[0], xy[1], 4, 0, 2 * Math.PI);
         context2.fill();
 
@@ -162,6 +168,7 @@ class WorldMap1 extends Component {
         const { isLoading } = this.state;
         return (
             <div className="map-box">
+                 {/*load data   */}
                 {isLoading ? (
                     <div className="spinner">
                         <Spin tip="Loading..." size="large" />
@@ -182,6 +189,8 @@ class WorldMap1 extends Component {
 
         const graticule = geoGraticule();
 
+        // d3 set the canvas
+
         const canvas = d3Select(this.refMap.current)
             .attr("width", width)
             .attr("height", height);
@@ -189,6 +198,8 @@ class WorldMap1 extends Component {
         const canvas2 = d3Select(this.refTrack.current)
             .attr("width", width)
             .attr("height", height);
+
+        // draw the on canvas
 
         const context = canvas.node().getContext("2d");
         const context2 = canvas2.node().getContext("2d");
@@ -217,6 +228,8 @@ class WorldMap1 extends Component {
             path(graticule.outline());
             context.stroke();
         });
+
+        // set to class level so that we can find it
 
         this.map = {
             projection: projection,
