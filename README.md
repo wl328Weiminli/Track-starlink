@@ -9,8 +9,8 @@
 * Deployed to the EC2. 
 
  
-## react code goes here
-https://github.com/wl328Weiminli/starlink
+## Express code goes here
+https://github.com/wl328Weiminli/starlink_express
 # possible problem
  recently the N2YO api is not stable. if the app didn't return the result, it may becuase the N2YO api's problem or my api key outdated.
 
